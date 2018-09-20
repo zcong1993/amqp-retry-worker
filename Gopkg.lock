@@ -3,6 +3,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/aybabtme/rgbterm"
+  packages = ["."]
+  revision = "cc83f3b3ce5911279513a46d6d3316d67bedaa54"
+
+[[projects]]
+  branch = "master"
   name = "github.com/streadway/amqp"
   packages = ["."]
   revision = "70e15c650864f4fc47f5d3c82ea117285480895d"
@@ -13,9 +19,15 @@
   packages = ["."]
   revision = "8c41060ec85a9f6da9166b8c6057a9597d4690aa"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/zcong1993/debugo"
+  packages = ["."]
+  revision = "023156df628bc5aad0201b14aafa8d696f94e82f"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7d3887fcf01c8eabecc265975e86774777316d570d45704931fc702d55c8c7f8"
+  inputs-digest = "0503c8dcc11e8f2571638d58f7489efb711c2e5e552171e3207445ac945e6e10"
   solver-name = "gps-cdcl"
   solver-version = 1

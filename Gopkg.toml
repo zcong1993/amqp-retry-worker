@@ -33,6 +33,10 @@
   branch = "master"
   name = "github.com/zcong1993/amqp-helpers"
 
+[[constraint]]
+  branch = "master"
+  name = "github.com/zcong1993/debugo"
+
 [prune]
   go-tests = true
   unused-packages = true
