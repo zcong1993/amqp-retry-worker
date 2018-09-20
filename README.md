@@ -1,4 +1,4 @@
-# amqp-retry-worker [![Go Report Card](https://goreportcard.com/badge/github.com/zcong1993/amqp-retry-worker)](https://goreportcard.com/report/github.com/zcong1993/amqp-retry-worker)
+# amqp-retry-worker [![Go Report Card](https://goreportcard.com/badge/github.com/zcong1993/amqp-retry-worker)](https://goreportcard.com/report/github.com/zcong1993/amqp-retry-worker) [![GoDoc](https://godoc.org/github.com/zcong1993/amqp-retry-worker?status.svg)](https://godoc.org/github.com/zcong1993/amqp-retry-worker)
 
 > out of box amqp retry worker for golang
 
