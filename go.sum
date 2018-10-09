@@ -4,5 +4,7 @@ github.com/streadway/amqp v0.0.0-20180806233856-70e15c650864 h1:Oj3PUEs+OUSYUpn3
 github.com/streadway/amqp v0.0.0-20180806233856-70e15c650864/go.mod h1:1WNBiOZtZQLpVAyu0iTduoJL9hEsMloAK5XWrtW0xdY=
 github.com/zcong1993/amqp-helpers v0.0.0-20181009085259-9d48ee908a7d h1:E3NfvwVweX13jYqQsUEpcME7IiilbtPn6JhOL4hf/+0=
 github.com/zcong1993/amqp-helpers v0.0.0-20181009085259-9d48ee908a7d/go.mod h1:RZ/Y3l5XX61qiRieT6y2EQUulomu3Ft7uOIqLdHrvqg=
+github.com/zcong1993/amqp-helpers v0.0.0-20181009104013-9c7dd35f8e45 h1:aH/aAwJkkPejUXfVPzIo2ONKcxDM/F3a/ey0sJZj1e8=
+github.com/zcong1993/amqp-helpers v0.0.0-20181009104013-9c7dd35f8e45/go.mod h1:RZ/Y3l5XX61qiRieT6y2EQUulomu3Ft7uOIqLdHrvqg=
 github.com/zcong1993/debugo v0.0.0-20180913035933-023156df628b h1:fWmcV8sbXelRvI6jf5u9Zu8uDC9j8kMLiKpfG85GW7Q=
 github.com/zcong1993/debugo v0.0.0-20180913035933-023156df628b/go.mod h1:Mao6lR2tS3dCQOTpN6c+5zxxbcqa80e6tw+TM/ERvso=

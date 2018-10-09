@@ -13,6 +13,7 @@ type RetryWorker struct {
 	url               string
 	ExchangeName      string
 	QueueName         string
+	WithDeadQueue     bool
 	retryExchangeName string
 	routerKeys        []string
 	worker            Worker
@@ -21,7 +22,7 @@ type RetryWorker struct {
 }
 
 // NewRetryWorker return a new RetryWorker instance
-func NewRetryWorker(url string, exchangeName, queueName string, routerKeys []string, worker Worker, backoff Backoff, maxRetry int) *RetryWorker {
+func NewRetryWorker(url string, exchangeName, queueName string, routerKeys []string, worker Worker, backoff Backoff, maxRetry int, withDeadQueue bool) *RetryWorker {
 	rw := &RetryWorker{
 		ExchangeName:      exchangeName,
 		QueueName:         queueName,
@@ -31,6 +32,7 @@ func NewRetryWorker(url string, exchangeName, queueName string, routerKeys []str
 		retryExchangeName: exchangeName + "_retry",
 		routerKeys:        routerKeys,
 		url:               url,
+		WithDeadQueue:     withDeadQueue,
 	}
 
 	return rw
@@ -47,9 +49,22 @@ func (rw *RetryWorker) Run() {
 	defer exCh.Close()
 	defer retryCh.Close()
 
+	// dead queue
+	consumerArgs := amqp.Table{}
+	if rw.WithDeadQueue {
+		exchangeName := rw.ExchangeName + "_dead"
+		queueName := rw.QueueName + "_dead"
+		deadCh := helpers.MustDeclareExchange(conn, exchangeName, nil)
+		helpers.MustBindQueue(deadCh, exchangeName, queueName, rw.routerKeys, nil)
+
+		consumerArgs = amqp.Table{"x-dead-letter-exchange": exchangeName}
+
+		defer deadCh.Close()
+	}
+
 	helpers.MustBindQueue(retryCh, rw.retryExchangeName, rw.QueueName, rw.routerKeys, args)
 
-	_, msgs := helpers.MustDeclareConsumer(exCh, rw.ExchangeName, rw.QueueName+"_retry", rw.routerKeys, nil)
+	_, msgs := helpers.MustDeclareConsumer(exCh, rw.ExchangeName, rw.QueueName+"_retry", rw.routerKeys, consumerArgs)
 
 	for msg := range msgs {
 		err, retry := rw.worker.Do(msg.Body, msg.RoutingKey)

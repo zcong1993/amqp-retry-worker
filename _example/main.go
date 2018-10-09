@@ -41,6 +41,6 @@ func (tw *TestWorker) Do(payload []byte, routerKey string)(error, bool) {
 
 func main() {
 	bf := backoff.NewBackoff(3000.0, 3.0)
-	rw := worker.NewRetryWorker("amqp://guest:guest@localhost:5672/", "test_retry_worker", "retry_queue", []string{"test"}, &TestWorker{}, bf, 2)
+	rw := worker.NewRetryWorker("amqp://guest:guest@localhost:5672/", "test_retry_worker", "retry_queue", []string{"test"}, &TestWorker{}, bf, 2, true)
 	rw.Run()
 }
