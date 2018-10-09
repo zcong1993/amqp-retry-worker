@@ -11,11 +11,12 @@ import (
 	"time"
 )
 
-func random() int {
-	s1 := rand.NewSource(time.Now().UnixNano())
-	r1 := rand.New(s1)
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
-	return r1.Intn(10)
+func random() int {
+	return rand.Intn(10)
 }
 
 type TestWorker struct {
@@ -40,6 +41,6 @@ func (tw *TestWorker) Do(payload []byte, routerKey string)(error, bool) {
 
 func main() {
 	bf := backoff.NewBackoff(3000.0, 3.0)
-	rw := worker.NewRetryWorker("amqp://guest:guest@localhost:5672/", "test_retry_worker", []string{"test"}, &TestWorker{}, bf, 2)
+	rw := worker.NewRetryWorker("amqp://guest:guest@localhost:5672/", "test_retry_worker", "retry_queue", []string{"test"}, &TestWorker{}, bf, 2)
 	rw.Run()
 }

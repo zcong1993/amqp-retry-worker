@@ -1,0 +1,8 @@
+github.com/aybabtme/rgbterm v0.0.0-20170906152045-cc83f3b3ce59 h1:WWB576BN5zNSZc/M9d/10pqEx5VHNhaQ/yOVAkmj5Yo=
+github.com/aybabtme/rgbterm v0.0.0-20170906152045-cc83f3b3ce59/go.mod h1:q/89r3U2H7sSsE2t6Kca0lfwTK8JdoNGS/yzM/4iH5I=
+github.com/streadway/amqp v0.0.0-20180806233856-70e15c650864 h1:Oj3PUEs+OUSYUpn35O+BE/ivHGirKixA3+vqA0Atu9A=
+github.com/streadway/amqp v0.0.0-20180806233856-70e15c650864/go.mod h1:1WNBiOZtZQLpVAyu0iTduoJL9hEsMloAK5XWrtW0xdY=
+github.com/zcong1993/amqp-helpers v0.0.0-20181009085259-9d48ee908a7d h1:E3NfvwVweX13jYqQsUEpcME7IiilbtPn6JhOL4hf/+0=
+github.com/zcong1993/amqp-helpers v0.0.0-20181009085259-9d48ee908a7d/go.mod h1:RZ/Y3l5XX61qiRieT6y2EQUulomu3Ft7uOIqLdHrvqg=
+github.com/zcong1993/debugo v0.0.0-20180913035933-023156df628b h1:fWmcV8sbXelRvI6jf5u9Zu8uDC9j8kMLiKpfG85GW7Q=
+github.com/zcong1993/debugo v0.0.0-20180913035933-023156df628b/go.mod h1:Mao6lR2tS3dCQOTpN6c+5zxxbcqa80e6tw+TM/ERvso=
